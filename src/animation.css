@@ -1,0 +1,75 @@
+.link:hover ~ .linea {
+    width: 90%;
+    opacity: 1;
+  }
+
+.linea {
+    transition: width 0.3s ease-in-out;
+    width: 0; 
+    opacity: 0;
+ }
+
+.sombra {
+    box-shadow: 0 0 40px 40px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.5s ease;
+}
+
+.sombra-react {
+    box-shadow: 0 0 40px 40px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.5s ease;
+}
+
+.svg:hover + .sombra-react {
+    box-shadow: 0 0 40px 40px rgba(96, 175, 214, 0.5);
+}
+
+.svg:hover + .sombra{
+    box-shadow: 0 0 40px 40px rgba(255, 214, 0, 0.5);
+}
+
+#titulo-card {
+    animation: fondo linear both;
+    animation-timeline: scroll(block);
+    animation-range: 0 300px;
+    z-index: 1;
+}
+
+@keyframes fondo {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(5px);
+        font-size: 1rem;
+        color: black;
+    }
+}
+
+.usuario-card{
+    animation: visto linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+    transition: all 0.5s ease;
+}
+
+.usuario-card:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(191, 33, 215, 0.5);
+}
+
+
+@keyframes visto{
+    from{
+        scale: .5;
+        opacity: 0;
+        translate: 0 -100px;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
